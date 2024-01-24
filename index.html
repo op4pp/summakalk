@@ -59,10 +59,10 @@
 				var resultLitres = resultDivide / 1.6
 				var resultKilometres = (resultLitres / 6.5) * 100
 
-                document.getElementById('resultMultiply').innerHTML = 'Kättesaadav summa on <b>' + resultMultiply + '€</b>';
-                document.getElementById('resultDivide').innerHTML = 'Ühe peale <b>' + resultDivide + '€</b>';
-				document.getElementById('resultLitres').innerHTML = 'Selle eest saab osta umbes <b>' + resultLitres + ' liitrit kütust</b>';
-				document.getElementById('resultKilometres').innerHTML = 'Sellega saab sõita umbes <b>' + resultKilometres + ' km</b>';
+                document.getElementById('resultMultiply').innerHTML = 'Kättesaadav summa on <b>' + Math.round(resultMultiply * 100) / 100 + '€</b>';
+                document.getElementById('resultDivide').innerHTML = 'Ühe peale <b>' + Math.round(resultDivide * 100) / 100 + '€</b>';
+				document.getElementById('resultLitres').innerHTML = 'Selle eest saab osta umbes <b>' + Math.round(resultLitres * 100) / 100 + ' liitrit kütust</b>';
+				document.getElementById('resultKilometres').innerHTML = 'Sellega saab sõita umbes <b>' + Math.round(resultKilometres * 100) / 100 + ' km</b>';
             } else {
                 document.getElementById('resultMultiply').innerHTML = 'Sisesta sobiv summa.';
                 document.getElementById('resultDivide').innerHTML = '';
@@ -81,10 +81,10 @@
 			var result3 = result2 / 1.6
 			var result4 = (result3 / 6.5) * 100
 
-            document.getElementById('result1').innerHTML = 'Kättesaadav summa on <b>' + result1 + '€</b>';
-            document.getElementById('result2').innerHTML = 'Ühe peale <b>' + result2 + '€</b>'
-			document.getElementById('result3').innerHTML = 'Selle eest saab osta umbes <b>' + result3 + ' liitrit kütust</b>';
-			document.getElementById('result4').innerHTML = 'Sellega saab sõita umbes <b>' + result4 + ' km</b>';
+            document.getElementById('result1').innerHTML = 'Kättesaadav summa on <b>' + Math.round(result1 * 100) / 100 + '€</b>';
+            document.getElementById('result2').innerHTML = 'Ühe peale <b>' + Math.round(result2 * 100) / 100 + '€</b>'
+			document.getElementById('result3').innerHTML = 'Selle eest saab osta umbes <b>' + Math.round(result3 * 100) / 100 + ' liitrit kütust</b>';
+			document.getElementById('result4').innerHTML = 'Sellega saab sõita umbes <b>' + Math.round(result4 * 100) / 100 + ' km</b>';
         }
     </script>
 </body>
