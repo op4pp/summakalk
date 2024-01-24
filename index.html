@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
-		font-size: 25px;
+			font-size: 25px;
         }
         input {
             padding: 8px;
@@ -32,28 +32,46 @@
     <button onclick="calculate()">Kalkuleeri</button>
     <p id="resultMultiply"></p>
     <p id="resultDivide"></p>
+	
+    <h2>Teenitud summa algsumma ja lõppsumma abil</h2>
+    <label for="startSum">Algsumma (€):</label>
+    <input type="number" id="startSum" placeholder="Algsumma">
+
+    <label for="endSum">Lõppsumma (€):</label>
+    <input type="number" id="endSum" placeholder="Lõppsumma">
+
+    <button type="button" onclick="calculate2()">Kalkuleeri</button>
+
+    <p id="result1"></p>
+    <p id="result2"></p>
 
     <script>
         function calculate() {
-            // Get the input value
             var inputNumber = document.getElementById('inputNumber').value;
 
-            // Check if the input is a valid number
             if (!isNaN(inputNumber)) {
-                // Perform the multiplication
                 var resultMultiply = inputNumber * 0.8;
 
-                // Perform the division
                 var resultDivide = resultMultiply / 2;
 
-                // Display the results
                 document.getElementById('resultMultiply').innerHTML = 'Kättesaadav summa on <b>' + resultMultiply + '€</b>';
                 document.getElementById('resultDivide').innerHTML = 'Ühe peale <b>' + resultDivide + '€</b>';
             } else {
-                // Display an error message if the input is not a valid number
                 document.getElementById('resultMultiply').innerHTML = 'Sisesta sobiv summa.';
                 document.getElementById('resultDivide').innerHTML = '';
-            }
+				}
+        }
+        function calculate2() {
+            var startSum = parseFloat(document.getElementById('startSum').value);
+            var endSum = parseFloat(document.getElementById('endSum').value);
+
+            var difference = endSum - startSum;
+
+            var result1 = difference * 0.8;
+            var result2 = result1 / 2;
+
+            document.getElementById('result1').innerHTML = 'Kättesaadav summa on <b>' + result1 + '€</b>';
+            document.getElementById('result2').innerHTML = 'Ühe peale <b>' + result2 + '€</b>';
         }
     </script>
 </body>
