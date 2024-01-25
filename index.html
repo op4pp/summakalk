@@ -128,7 +128,7 @@
 			var priceOfFuel = spentLitres * 1.6;
 			var amountMinusFuel = actualAmount - priceOfFuel;
 			var amountPerOne = amountMinusFuel / 2;
-			var unfairSum = receivedSum / 2;
+			var unfairSum = actualAmount / 2;
 
 			document.getElementById('actualAmount').innerHTML = 'Tegelik summa on <b>' + Math.round(actualAmount * 100) / 100 + '€</b>';
 			document.getElementById('priceOfFuel').innerHTML = 'Kütusehind ' + spentKilometres + ' km kohta on <b> ' + Math.round(priceOfFuel * 100) / 100 + '€</b>';
