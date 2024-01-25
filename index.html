@@ -48,6 +48,15 @@
     <p id="result2"></p>
 	<p id="result3"></p>
 	<p id="result4"></p>
+	
+	<h2>Kütuse kalkulaator</h2>
+	<label for="distanceKilometres">Distants (km):</label>
+	<input type="number" id="distanceKilometres" placeholder="Kilomeetrite arv">
+	
+	<button type="button" onclick="calculate3()">Kalkuleeri</button>
+	
+	<p id="fuelLitres"></p>
+	<p id="fuelPrice"></p>
 
     <script>
         function calculate() {
@@ -56,8 +65,8 @@
             if (!isNaN(inputNumber)) {
                 var resultMultiply = inputNumber * 0.8;
                 var resultDivide = resultMultiply / 2;
-				var resultLitres = resultDivide / 1.6
-				var resultKilometres = (resultLitres / 6.5) * 100
+				var resultLitres = resultDivide / 1.6;
+				var resultKilometres = (resultLitres / 6.5) * 100;
 
                 document.getElementById('resultMultiply').innerHTML = 'Kättesaadav summa on <b>' + Math.round(resultMultiply * 100) / 100 + '€</b>';
                 document.getElementById('resultDivide').innerHTML = 'Ühe peale <b>' + Math.round(resultDivide * 100) / 100 + '€</b>';
@@ -78,13 +87,22 @@
 
             var result1 = difference * 0.8;
             var result2 = result1 / 2;
-			var result3 = result2 / 1.6
-			var result4 = (result3 / 6.5) * 100
+			var result3 = result2 / 1.6;
+			var result4 = (result3 / 6.5) * 100;
 
             document.getElementById('result1').innerHTML = 'Kättesaadav summa on <b>' + Math.round(result1 * 100) / 100 + '€</b>';
             document.getElementById('result2').innerHTML = 'Ühe peale <b>' + Math.round(result2 * 100) / 100 + '€</b>'
 			document.getElementById('result3').innerHTML = 'Selle eest saab osta umbes <b>' + Math.round(result3 * 100) / 100 + ' liitrit kütust</b>';
 			document.getElementById('result4').innerHTML = 'Sellega saab sõita umbes <b>' + Math.round(result4 * 100) / 100 + ' km</b>';
+        }
+        function calculate3() {
+            var distanceKilometres = parseFloat(document.getElementById('distanceKilometres').value);
+
+            var fuelLitres = (distanceKilometres / 100) * 6.5;
+			var fuelPrice = fuelLitres * 1.6;
+
+			document.getElementById('fuelLitres').innerHTML = distanceKilometres + ' km läbimiseks läheb vaja <b>' + Math.round(fuelLitres * 100) / 100 + ' liitrit kütust</b>';
+			document.getElementById('fuelPrice').innerHTML = 'See läheb maksma <b>' + Math.round(fuelPrice * 100) / 100 + '€</b>';
         }
     </script>
 </body>
