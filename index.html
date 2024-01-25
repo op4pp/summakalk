@@ -71,6 +71,7 @@
 	<p id="priceOfFuel"></p>
 	<p id="amountMinusFuel"></p>
 	<p id="amountPerOne"></p>
+	<p id="unfairSum"></p>
 
     <script>
         function calculate() {
@@ -127,11 +128,13 @@
 			var priceOfFuel = spentLitres * 1.6;
 			var amountMinusFuel = actualAmount - priceOfFuel;
 			var amountPerOne = amountMinusFuel / 2;
+			var unfairSum = receivedSum / 2;
 
 			document.getElementById('actualAmount').innerHTML = 'Tegelik summa on <b>' + Math.round(actualAmount * 100) / 100 + '€</b>';
 			document.getElementById('priceOfFuel').innerHTML = 'Kütusehind ' + spentKilometres + ' km kohta on <b> ' + Math.round(priceOfFuel * 100) / 100 + '€</b>';
 			document.getElementById('amountMinusFuel').innerHTML = 'Puhtalt teenitud summa miinus kütus on <b>' + Math.round(amountMinusFuel * 100) / 100 + '€</b>';
 			document.getElementById('amountPerOne').innerHTML = 'Sellisel juhul ühe inimese kohta <b>' + Math.round(amountPerOne * 100) / 100 + '€</b>';
+			document.getElementById('unfairSum').innerHTML = '<i>Teistsuguse arvutuse puhul oleks olnud ' + Math.round(unfairSum * 100) / 100 + '€</i>';
         }
     </script>
 </body>
