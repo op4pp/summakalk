@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,14 +65,14 @@
         <label for="kilometers">Läbitud distans (km):</label>
         <input type="number" id="kilometers" required>
 
-        <label for="money">Summa (€):</label>
-        <input type="number" id="money" required>
-
         <label for="fuelPrice">Kütuse hind (€):</label>
         <input type="number" id="fuelPrice" placeholder="Default: 1.6" value="1.6">
 
         <label for="fuelConsumption">Kütusekulu (l/100km):</label>
         <input type="number" id="fuelConsumption" placeholder="Default: 6.5" value="6.5">
+		
+        <label for="money">Summa (€):</label>
+        <input type="number" id="money" required>
 
         <button type="button" onclick="calculatePrice()">Arvuta</button>
     </form>
@@ -86,8 +87,10 @@
         var fuelPrice = parseFloat(document.getElementById("fuelPrice").value) || 1.6;
         var fuelConsumption = parseFloat(document.getElementById("fuelConsumption").value) || 6.5;
 
-        var price = (kilometers / fuelConsumption) * fuelPrice;
-		document.getElementById('result').innerHTML = 'Hinnanguline kütuse hind ' + kilometers + ' km kohta on ' + price.toFixed(2) + '€';
+        var litresSpent = (kilometers / 100) * fuelConsumption;
+		var price = litresSpent * fuelPrice;
+		var actualSum = money * 0.8 - price;
+		document.getElementById('result').innerHTML = 'Hinnanguline kütuse hind ' + kilometers.toFixed(2) + ' km kohta on ' + price.toFixed(2) + '€.<br>Summa, kust kõik on maha arvutatud (ehk mille saab kätte): ' + actualSum.toFixed(2) + '<br>Seega ühele: ' + (actualSum / 2).toFixed(2);
     }
 </script>
 
