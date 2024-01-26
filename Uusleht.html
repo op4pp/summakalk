@@ -90,7 +90,7 @@
         var litresSpent = (kilometers / 100) * fuelConsumption;
 		var price = litresSpent * fuelPrice;
 		var actualSum = money * 0.8 - price;
-		document.getElementById('result').innerHTML = 'Hinnanguline kütuse hind ' + kilometers.toFixed(2) + ' km kohta on ' + price.toFixed(2) + '€.<br>Summa, kust kõik on maha arvutatud (ehk mille saab kätte): ' + actualSum.toFixed(2) + '<br>Seega ühele: ' + (actualSum / 2).toFixed(2);
+		document.getElementById('result').innerHTML = 'Hinnanguline kütuse hind ' + kilometers.toFixed(2) + ' km kohta on ' + price.toFixed(2) + '€.<br>Summa, kust kõik on maha arvutatud (ehk mille saab kätte): ' + actualSum.toFixed(2) + '€<br>Seega ühele: ' + (actualSum / 2).toFixed(2) + '€';
     }
 </script>
 
